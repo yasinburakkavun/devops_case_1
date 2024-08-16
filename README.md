@@ -1,4 +1,5 @@
-# case_bestofcloudforme
+# WİKİ DE UYGULAMA HAKKINDA VE KARŞILAŞTIĞIM SORUNLAR İLE İLGİLİ YAZDIĞIM YAZIYA GÖZ ATABİLİRSİNİZ.
+
 
 ## Uygulama Çalıştırma ve Test Etme
 
@@ -11,4 +12,3 @@ Terminalde uygulamanızı çalıştırmak için aşağıdaki komutu kullanın:
 ```bash
 flask run --host=127.0.0.1 --port=8000
 
-# WİKİ DE UYGULAMA HAKKINDA VE KARŞILAŞTIĞIM SORUNLAR İLE İLGİLİ YAZDIĞIM YAZIYA GÖZ ATABİLİRSİNİZ.
