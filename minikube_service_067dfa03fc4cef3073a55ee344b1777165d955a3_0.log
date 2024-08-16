@@ -1,0 +1,147 @@
+Log file created at: 2024/08/14 17:52:36
+Running on machine: yasin-burak-kavun-Vostro-15-3530
+Binary: Built with gc go1.22.1 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 17:52:36.519128   23953 out.go:291] Setting OutFile to fd 1 ...
+I0814 17:52:36.519330   23953 out.go:343] isatty.IsTerminal(1) = true
+I0814 17:52:36.519333   23953 out.go:304] Setting ErrFile to fd 2...
+I0814 17:52:36.519341   23953 out.go:343] isatty.IsTerminal(2) = true
+I0814 17:52:36.519468   23953 root.go:338] Updating PATH: /home/yasin-burak-kavun/.minikube/bin
+W0814 17:52:36.519527   23953 root.go:314] Error reading config file at /home/yasin-burak-kavun/.minikube/config/config.json: open /home/yasin-burak-kavun/.minikube/config/config.json: no such file or directory
+I0814 17:52:36.519613   23953 mustload.go:65] Loading cluster: minikube
+I0814 17:52:36.519801   23953 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.30.0
+I0814 17:52:36.520062   23953 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0814 17:52:36.532936   23953 host.go:66] Checking if "minikube" exists ...
+I0814 17:52:36.533137   23953 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0814 17:52:36.566126   23953 info.go:266] docker info: {ID:17029f4c-7009-496d-acf8-30fe15a64692 Containers:2 ContainersRunning:1 ContainersPaused:0 ContainersStopped:1 Images:4 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Using metacopy false] [Native Overlay Diff true] [userxattr false]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:false KernelMemoryTCP:false CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:31 OomKillDisable:false NGoroutines:51 SystemTime:2024-08-14 17:52:36.558753917 +0300 +03 LoggingDriver:json-file CgroupDriver:systemd NEventsListener:0 KernelVersion:6.8.0-40-generic OperatingSystem:Ubuntu 24.04 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:12 MemTotal:41730793472 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:yasin-burak-kavun-Vostro-15-3530 Labels:[] ExperimentalBuild:false ServerVersion:27.1.1 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:8fc6bcff51318944179630522a095cc9dbf9f353 Expected:8fc6bcff51318944179630522a095cc9dbf9f353} RuncCommit:{ID:v1.1.13-0-g58aa920 Expected:v1.1.13-0-g58aa920} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=builtin name=cgroupns] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.16.1] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.29.1]] Warnings:<nil>}}
+I0814 17:52:36.566218   23953 api_server.go:166] Checking apiserver status ...
+I0814 17:52:36.566263   23953 ssh_runner.go:195] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0814 17:52:36.566288   23953 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0814 17:52:36.578666   23953 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:32768 SSHKeyPath:/home/yasin-burak-kavun/.minikube/machines/minikube/id_rsa Username:docker}
+I0814 17:52:36.666746   23953 ssh_runner.go:195] Run: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup
+W0814 17:52:36.674646   23953 api_server.go:177] unable to find freezer cgroup: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup: Process exited with status 1
+stdout:
+
+stderr:
+I0814 17:52:36.674677   23953 ssh_runner.go:195] Run: ls
+I0814 17:52:36.677535   23953 api_server.go:253] Checking apiserver healthz at https://192.168.49.2:8443/healthz ...
+I0814 17:52:36.683090   23953 api_server.go:279] https://192.168.49.2:8443/healthz returned 200:
+ok
+I0814 17:52:36.683099   23953 host.go:66] Checking if "minikube" exists ...
+I0814 17:52:36.683219   23953 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 17:52:36.705377   23953 service.go:214] Found service: &Service{ObjectMeta:{flask-service  default  919d87d4-1115-4862-a56b-7c2b489aafa1 726 0 2024-08-14 17:52:27 +0300 +03 <nil> <nil> map[] map[kubectl.kubernetes.io/last-applied-configuration:{"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"flask-service","namespace":"default"},"spec":{"ports":[{"nodePort":30007,"port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"flask-app"},"type":"NodePort"}}
+] [] [] [{kubectl-client-side-apply Update v1 2024-08-14 17:52:27 +0300 +03 FieldsV1 {"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:spec":{"f:externalTrafficPolicy":{},"f:internalTrafficPolicy":{},"f:ports":{".":{},"k:{\"port\":8080,\"protocol\":\"TCP\"}":{".":{},"f:nodePort":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{},"f:sessionAffinity":{},"f:type":{}}} }]},Spec:ServiceSpec{Ports:[]ServicePort{ServicePort{Name:,Protocol:TCP,Port:8080,TargetPort:{0 8080 },NodePort:30007,AppProtocol:nil,},},Selector:map[string]string{app: flask-app,},ClusterIP:10.108.190.142,Type:NodePort,ExternalIPs:[],SessionAffinity:None,LoadBalancerIP:,LoadBalancerSourceRanges:[],ExternalName:,ExternalTrafficPolicy:Cluster,HealthCheckNodePort:0,PublishNotReadyAddresses:false,SessionAffinityConfig:nil,IPFamilyPolicy:*SingleStack,ClusterIPs:[10.108.190.142],IPFamilies:[IPv4],AllocateLoadBalancerNodePorts:nil,LoadBalancerClass:nil,InternalTrafficPolicy:*Cluster,TrafficDistribution:nil,},Status:ServiceStatus{LoadBalancer:LoadBalancerStatus{Ingress:[]LoadBalancerIngress{},},Conditions:[]Condition{},},}
+I0814 17:52:36.705476   23953 host.go:66] Checking if "minikube" exists ...
+I0814 17:52:36.705654   23953 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 17:52:36.728835   23953 out.go:177] 
+W0814 17:52:36.730598   23953 out.go:239] ❌  Exiting due to SVC_UNREACHABLE: service not available: no running pod for service flask-service found
+W0814 17:52:36.730611   23953 out.go:239] 
+W0814 17:52:36.731914   23953 out.go:239] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m    Please also attach the following file to the GitHub issue:                             [31m│[0m
+[31m│[0m    - /tmp/minikube_service_067dfa03fc4cef3073a55ee344b1777165d955a3_0.log                 [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0814 17:52:36.733745   23953 out.go:177] 
+Log file created at: 2024/08/14 17:59:34
+Running on machine: yasin-burak-kavun-Vostro-15-3530
+Binary: Built with gc go1.22.1 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 17:59:34.577897   25995 out.go:291] Setting OutFile to fd 1 ...
+I0814 17:59:34.578036   25995 out.go:343] isatty.IsTerminal(1) = true
+I0814 17:59:34.578038   25995 out.go:304] Setting ErrFile to fd 2...
+I0814 17:59:34.578041   25995 out.go:343] isatty.IsTerminal(2) = true
+I0814 17:59:34.578134   25995 root.go:338] Updating PATH: /home/yasin-burak-kavun/.minikube/bin
+W0814 17:59:34.578191   25995 root.go:314] Error reading config file at /home/yasin-burak-kavun/.minikube/config/config.json: open /home/yasin-burak-kavun/.minikube/config/config.json: no such file or directory
+I0814 17:59:34.578262   25995 mustload.go:65] Loading cluster: minikube
+I0814 17:59:34.578421   25995 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.30.0
+I0814 17:59:34.578611   25995 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0814 17:59:34.589425   25995 host.go:66] Checking if "minikube" exists ...
+I0814 17:59:34.589627   25995 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0814 17:59:34.623553   25995 info.go:266] docker info: {ID:17029f4c-7009-496d-acf8-30fe15a64692 Containers:2 ContainersRunning:1 ContainersPaused:0 ContainersStopped:1 Images:4 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Using metacopy false] [Native Overlay Diff true] [userxattr false]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:false KernelMemoryTCP:false CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:31 OomKillDisable:false NGoroutines:51 SystemTime:2024-08-14 17:59:34.616602385 +0300 +03 LoggingDriver:json-file CgroupDriver:systemd NEventsListener:0 KernelVersion:6.8.0-40-generic OperatingSystem:Ubuntu 24.04 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:12 MemTotal:41730793472 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:yasin-burak-kavun-Vostro-15-3530 Labels:[] ExperimentalBuild:false ServerVersion:27.1.1 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:8fc6bcff51318944179630522a095cc9dbf9f353 Expected:8fc6bcff51318944179630522a095cc9dbf9f353} RuncCommit:{ID:v1.1.13-0-g58aa920 Expected:v1.1.13-0-g58aa920} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=builtin name=cgroupns] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.16.1] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.29.1]] Warnings:<nil>}}
+I0814 17:59:34.623629   25995 api_server.go:166] Checking apiserver status ...
+I0814 17:59:34.623666   25995 ssh_runner.go:195] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0814 17:59:34.623696   25995 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0814 17:59:34.636896   25995 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:32768 SSHKeyPath:/home/yasin-burak-kavun/.minikube/machines/minikube/id_rsa Username:docker}
+I0814 17:59:34.722875   25995 ssh_runner.go:195] Run: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup
+W0814 17:59:34.730433   25995 api_server.go:177] unable to find freezer cgroup: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup: Process exited with status 1
+stdout:
+
+stderr:
+I0814 17:59:34.730463   25995 ssh_runner.go:195] Run: ls
+I0814 17:59:34.732933   25995 api_server.go:253] Checking apiserver healthz at https://192.168.49.2:8443/healthz ...
+I0814 17:59:34.736286   25995 api_server.go:279] https://192.168.49.2:8443/healthz returned 200:
+ok
+I0814 17:59:34.736297   25995 host.go:66] Checking if "minikube" exists ...
+I0814 17:59:34.736468   25995 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 17:59:34.759150   25995 service.go:214] Found service: &Service{ObjectMeta:{flask-service  default  919d87d4-1115-4862-a56b-7c2b489aafa1 726 0 2024-08-14 17:52:27 +0300 +03 <nil> <nil> map[] map[kubectl.kubernetes.io/last-applied-configuration:{"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"flask-service","namespace":"default"},"spec":{"ports":[{"nodePort":30007,"port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"flask-app"},"type":"NodePort"}}
+] [] [] [{kubectl-client-side-apply Update v1 2024-08-14 17:52:27 +0300 +03 FieldsV1 {"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:spec":{"f:externalTrafficPolicy":{},"f:internalTrafficPolicy":{},"f:ports":{".":{},"k:{\"port\":8080,\"protocol\":\"TCP\"}":{".":{},"f:nodePort":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{},"f:sessionAffinity":{},"f:type":{}}} }]},Spec:ServiceSpec{Ports:[]ServicePort{ServicePort{Name:,Protocol:TCP,Port:8080,TargetPort:{0 8080 },NodePort:30007,AppProtocol:nil,},},Selector:map[string]string{app: flask-app,},ClusterIP:10.108.190.142,Type:NodePort,ExternalIPs:[],SessionAffinity:None,LoadBalancerIP:,LoadBalancerSourceRanges:[],ExternalName:,ExternalTrafficPolicy:Cluster,HealthCheckNodePort:0,PublishNotReadyAddresses:false,SessionAffinityConfig:nil,IPFamilyPolicy:*SingleStack,ClusterIPs:[10.108.190.142],IPFamilies:[IPv4],AllocateLoadBalancerNodePorts:nil,LoadBalancerClass:nil,InternalTrafficPolicy:*Cluster,TrafficDistribution:nil,},Status:ServiceStatus{LoadBalancer:LoadBalancerStatus{Ingress:[]LoadBalancerIngress{},},Conditions:[]Condition{},},}
+I0814 17:59:34.759251   25995 host.go:66] Checking if "minikube" exists ...
+I0814 17:59:34.759420   25995 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 17:59:34.782852   25995 out.go:177] 
+W0814 17:59:34.784550   25995 out.go:239] ❌  Exiting due to SVC_UNREACHABLE: service not available: no running pod for service flask-service found
+W0814 17:59:34.784563   25995 out.go:239] 
+W0814 17:59:34.785774   25995 out.go:239] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m    Please also attach the following file to the GitHub issue:                             [31m│[0m
+[31m│[0m    - /tmp/minikube_service_067dfa03fc4cef3073a55ee344b1777165d955a3_0.log                 [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0814 17:59:34.787648   25995 out.go:177] 
+Log file created at: 2024/08/14 18:16:27
+Running on machine: yasin-burak-kavun-Vostro-15-3530
+Binary: Built with gc go1.22.1 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 18:16:27.442578   30623 out.go:291] Setting OutFile to fd 1 ...
+I0814 18:16:27.442765   30623 out.go:343] isatty.IsTerminal(1) = true
+I0814 18:16:27.442767   30623 out.go:304] Setting ErrFile to fd 2...
+I0814 18:16:27.442770   30623 out.go:343] isatty.IsTerminal(2) = true
+I0814 18:16:27.442920   30623 root.go:338] Updating PATH: /home/yasin-burak-kavun/.minikube/bin
+W0814 18:16:27.443000   30623 root.go:314] Error reading config file at /home/yasin-burak-kavun/.minikube/config/config.json: open /home/yasin-burak-kavun/.minikube/config/config.json: no such file or directory
+I0814 18:16:27.443099   30623 mustload.go:65] Loading cluster: minikube
+I0814 18:16:27.443271   30623 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.30.0
+I0814 18:16:27.443456   30623 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0814 18:16:27.456701   30623 host.go:66] Checking if "minikube" exists ...
+I0814 18:16:27.456839   30623 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0814 18:16:27.488857   30623 info.go:266] docker info: {ID:17029f4c-7009-496d-acf8-30fe15a64692 Containers:2 ContainersRunning:1 ContainersPaused:0 ContainersStopped:1 Images:4 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Using metacopy false] [Native Overlay Diff true] [userxattr false]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:false KernelMemoryTCP:false CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:31 OomKillDisable:false NGoroutines:51 SystemTime:2024-08-14 18:16:27.481578262 +0300 +03 LoggingDriver:json-file CgroupDriver:systemd NEventsListener:0 KernelVersion:6.8.0-40-generic OperatingSystem:Ubuntu 24.04 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:12 MemTotal:41730793472 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:yasin-burak-kavun-Vostro-15-3530 Labels:[] ExperimentalBuild:false ServerVersion:27.1.1 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:8fc6bcff51318944179630522a095cc9dbf9f353 Expected:8fc6bcff51318944179630522a095cc9dbf9f353} RuncCommit:{ID:v1.1.13-0-g58aa920 Expected:v1.1.13-0-g58aa920} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=builtin name=cgroupns] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.16.1] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.29.1]] Warnings:<nil>}}
+I0814 18:16:27.488930   30623 api_server.go:166] Checking apiserver status ...
+I0814 18:16:27.488969   30623 ssh_runner.go:195] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0814 18:16:27.488993   30623 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0814 18:16:27.501807   30623 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:32768 SSHKeyPath:/home/yasin-burak-kavun/.minikube/machines/minikube/id_rsa Username:docker}
+I0814 18:16:27.591088   30623 ssh_runner.go:195] Run: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup
+W0814 18:16:27.598535   30623 api_server.go:177] unable to find freezer cgroup: sudo egrep ^[0-9]+:freezer: /proc/5335/cgroup: Process exited with status 1
+stdout:
+
+stderr:
+I0814 18:16:27.598560   30623 ssh_runner.go:195] Run: ls
+I0814 18:16:27.601066   30623 api_server.go:253] Checking apiserver healthz at https://192.168.49.2:8443/healthz ...
+I0814 18:16:27.604569   30623 api_server.go:279] https://192.168.49.2:8443/healthz returned 200:
+ok
+I0814 18:16:27.604579   30623 host.go:66] Checking if "minikube" exists ...
+I0814 18:16:27.604702   30623 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 18:16:27.629356   30623 service.go:214] Found service: &Service{ObjectMeta:{flask-service  default  919d87d4-1115-4862-a56b-7c2b489aafa1 726 0 2024-08-14 17:52:27 +0300 +03 <nil> <nil> map[] map[kubectl.kubernetes.io/last-applied-configuration:{"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"flask-service","namespace":"default"},"spec":{"ports":[{"nodePort":30007,"port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"flask-app"},"type":"NodePort"}}
+] [] [] [{kubectl-client-side-apply Update v1 2024-08-14 17:52:27 +0300 +03 FieldsV1 {"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:spec":{"f:externalTrafficPolicy":{},"f:internalTrafficPolicy":{},"f:ports":{".":{},"k:{\"port\":8080,\"protocol\":\"TCP\"}":{".":{},"f:nodePort":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{},"f:sessionAffinity":{},"f:type":{}}} }]},Spec:ServiceSpec{Ports:[]ServicePort{ServicePort{Name:,Protocol:TCP,Port:8080,TargetPort:{0 8080 },NodePort:30007,AppProtocol:nil,},},Selector:map[string]string{app: flask-app,},ClusterIP:10.108.190.142,Type:NodePort,ExternalIPs:[],SessionAffinity:None,LoadBalancerIP:,LoadBalancerSourceRanges:[],ExternalName:,ExternalTrafficPolicy:Cluster,HealthCheckNodePort:0,PublishNotReadyAddresses:false,SessionAffinityConfig:nil,IPFamilyPolicy:*SingleStack,ClusterIPs:[10.108.190.142],IPFamilies:[IPv4],AllocateLoadBalancerNodePorts:nil,LoadBalancerClass:nil,InternalTrafficPolicy:*Cluster,TrafficDistribution:nil,},Status:ServiceStatus{LoadBalancer:LoadBalancerStatus{Ingress:[]LoadBalancerIngress{},},Conditions:[]Condition{},},}
+I0814 18:16:27.629457   30623 host.go:66] Checking if "minikube" exists ...
+I0814 18:16:27.629617   30623 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0814 18:16:27.652296   30623 out.go:177] 
+W0814 18:16:27.654092   30623 out.go:239] ❌  Exiting due to SVC_UNREACHABLE: service not available: no running pod for service flask-service found
+W0814 18:16:27.654109   30623 out.go:239] 
+W0814 18:16:27.655019   30623 out.go:239] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m    Please also attach the following file to the GitHub issue:                             [31m│[0m
+[31m│[0m    - /tmp/minikube_service_067dfa03fc4cef3073a55ee344b1777165d955a3_0.log                 [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0814 18:16:27.656757   30623 out.go:177] 
