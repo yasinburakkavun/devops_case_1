@@ -1,6 +1,3 @@
-## WİKİ DE UYGULAMA HAKKINDA VE KARŞILAŞTIĞIM SORUNLAR İLE İLGİLİ YAZDIĞIM YAZIYA GÖZ ATABİLİRSİNİZ.
-
-
 ## Uygulama Çalıştırma ve Test Etme
 
 http://127.0.0.1:8000
